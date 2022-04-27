@@ -35,6 +35,11 @@ public class UsuarioController {
         return this.usuarioService.obtenerPorPrioridad(prioridad);
     }
 
+    @PutMapping(path = "/actualizar")
+    public UsuarioModel editar(@RequestBody UsuarioModel usuario){
+        return this.usuarioService.guardarUsuario(usuario);
+    }
+
     @DeleteMapping(path = "/{id}")
     public String eliminarPorId(@PathVariable("id") Long id) {
         boolean ok = this.usuarioService.eliminarUsuario(id);
