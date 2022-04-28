@@ -39,4 +39,6 @@ public class UsuarioServiceTest {
         List<UsuarioModel> usuarioModelList=(List<UsuarioModel>) usuarioRepository.findAll();
         assertThat(usuarioModelList).size().isGreaterThan(0);
     }
+
+    
 }

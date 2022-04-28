@@ -20,11 +20,6 @@ public class UsuarioController {
         return usuarioService.obtenerUsuarios();
     }
 
-    @PostMapping()
-    public UsuarioModel guardarUsuario(@RequestBody UsuarioModel usuario) {
-        return this.usuarioService.guardarUsuario(usuario);
-    }
-
     @GetMapping(path = "/{id}")
     public Optional<UsuarioModel> obtenerUsuarioPorId(@PathVariable("id") Long id) {
         return this.usuarioService.obtenerPorId(id);
@@ -35,8 +30,14 @@ public class UsuarioController {
         return this.usuarioService.obtenerPorPrioridad(prioridad);
     }
 
+    @PostMapping()
+    public UsuarioModel guardarUsuario(@RequestBody UsuarioModel usuario) {
+        return this.usuarioService.guardarUsuario(usuario);
+    }
+
+
     @PutMapping(path = "/actualizar")
-    public UsuarioModel editar(@RequestBody UsuarioModel usuario){
+    public UsuarioModel editarUsuario(@RequestBody UsuarioModel usuario) {
         return this.usuarioService.guardarUsuario(usuario);
     }
 
